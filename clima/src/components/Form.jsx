@@ -1,15 +1,13 @@
 import React, {Fragment, useState} from 'react';
 import Error from './Error';
 import PropTypes from 'prop-types';
+import ErrorApi from './ErrorApi';
 
-const Form = props => {
+const Form = ({data, handleData,handleValidatedForm,errorApi}) => {
 
 // States and destructuring
 
-    const [data, handleData] = useState({
-        ciudad: '',
-        pais: ''
-    });
+   
     const [errorCiudad, handleErrorCiudad] = useState(false);
     const [errorPais, handleErrorPais] = useState(false);
     const {ciudad,pais} = data;
@@ -33,6 +31,11 @@ const Form = props => {
             handleErrorPais(true);
         }else{
             handleErrorPais(false);
+        }
+        if(ciudad !== '' && pais !== ''){
+            handleValidatedForm(true);
+        }else{
+            handleValidatedForm(false);
         }
     }
     return (
@@ -84,6 +87,15 @@ const Form = props => {
                                 null
                     }
                 </div>
+                {
+                    errorApi
+                        ?
+                            <ErrorApi
+                                message='Debes introducir una ciudad y país válidos'
+                            />
+                        :
+                            null    
+                }
                 <div className="input-field col s12">
                         <input 
                             type="submit"

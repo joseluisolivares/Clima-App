@@ -40,7 +40,7 @@ function App() {
 			}
 		} 
 		callApi();
-	},[validatedForm])
+	},[validatedForm,ciudad,pais])
 	return (
 		<Fragment>
 			<Header

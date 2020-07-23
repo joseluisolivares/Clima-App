@@ -109,7 +109,10 @@ const Form = ({data, handleData,handleValidatedForm,errorApi}) => {
 };
 
 Form.propTypes = {
-    
+    data:PropTypes.object.isRequired,
+    handleData:PropTypes.func.isRequired,
+    handleValidatedForm:PropTypes.func.isRequired,
+    errorApi:PropTypes.bool.isRequired
 };
 
 export default Form;

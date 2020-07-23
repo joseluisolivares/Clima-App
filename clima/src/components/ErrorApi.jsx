@@ -10,7 +10,7 @@ const ErrorApi = ({message}) => {
 };
 
 ErrorApi.propTypes = {
-    
+    message:PropTypes.string.isRequired
 };
 
 export default ErrorApi;

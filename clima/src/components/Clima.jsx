@@ -28,7 +28,7 @@ const Clima = ({result}) => {
 };
 
 Clima.propTypes = {
-    
+    result:PropTypes.object.isRequired
 };
 
 export default Clima;

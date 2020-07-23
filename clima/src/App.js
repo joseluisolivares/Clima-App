@@ -25,7 +25,7 @@ function App() {
 		const callApi = async() => {
 			if(validatedForm){
 				const apiId ='fa7276da105c52e463140e98b4cb4907';
-				const url = `http://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=${apiId}`;
+				const url = `https://api.openweathermap.org/data/2.5/weather?q=${ciudad},${pais}&appid=${apiId}`;
 				const conexionApi = await fetch(url);
 				const answer = await conexionApi.json();
 				handleValidatedForm(false);
